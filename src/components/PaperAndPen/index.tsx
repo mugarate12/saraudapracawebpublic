@@ -14,9 +14,9 @@ const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, l
     let top = -60
     let left = 38
     let topNextLine = 12
-    let topIncrement = -2
-    let leftIncrement = 8
-    let lineLimit = 10
+    let topIncrement = -1
+    let leftIncrement = 6
+    let lineLimit = 14
     let rotationPen
 
     if (numberline === 1) {
