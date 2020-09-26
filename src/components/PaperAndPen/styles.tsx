@@ -25,7 +25,7 @@ export const paperContainer = styled.div`
   background-color: #E8C374;
 `
 
-export const paperLine  = styled.div`
+export const paperLine = styled.div`
   height: 10px;
   width: 90%;
   background-color: #E8C374;
@@ -33,6 +33,10 @@ export const paperLine  = styled.div`
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #333333;
+`
+
+export const PaperLineContent = styled.p`
+  font-size: 10px;
 `
 
 //desenhar a caneta

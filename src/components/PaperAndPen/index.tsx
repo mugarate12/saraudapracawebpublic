@@ -5,39 +5,44 @@ import * as Styled from './styles'
 interface PaperAndPenInterface {
   linelenght: number;
   numberline: number;
+  lineOneContent?: string;
+  lineTwoContent?: string;
 }
 
-const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline }) => {
+const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, lineOneContent, lineTwoContent }) => {
   function movePenInPaper() {
     let top = -60
-    let left = 40
+    let left = 38
+    let topNextLine = 12
+    let topIncrement = -2
+    let leftIncrement = 8
+    let lineLimit = 10
     let rotationPen
 
     if (numberline === 1) {
       let topAlteration
       let leftAlteration
 
-      if (linelenght > 8) {
-        topAlteration = 8 * -2
-        leftAlteration = 8 * 10
+      if (linelenght > lineLimit) {
+        topAlteration = lineLimit * topIncrement
+        leftAlteration = lineLimit * leftIncrement
       } else {
-        topAlteration = linelenght * -2
-        leftAlteration = linelenght * 10
+        topAlteration = linelenght * topIncrement
+        leftAlteration = linelenght * leftIncrement
       }
 
       top = top + topAlteration
       left = left + leftAlteration
     } else if (numberline === 2) {
-      let topNextLine = 12
       let topAlteration
       let leftAlteration
 
-      if (linelenght > 8) {
-        topAlteration = 8 * -2
-        leftAlteration = 8 * 10
+      if (linelenght > lineLimit) {
+        topAlteration = lineLimit * topIncrement
+        leftAlteration = lineLimit * leftIncrement
       } else {
-        topAlteration = linelenght * -2
-        leftAlteration = linelenght * 10
+        topAlteration = linelenght * topIncrement
+        leftAlteration = linelenght * leftIncrement
       }
 
       top = top + topNextLine + topAlteration
@@ -61,8 +66,12 @@ const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline })
     <Styled.ContainerG>
       <Styled.Container>
         <Styled.paperContainer>
-          <Styled.paperLine />
-          <Styled.paperLine />
+          <Styled.paperLine >
+            <Styled.PaperLineContent>{lineOneContent}</Styled.PaperLineContent>
+          </Styled.paperLine>
+          <Styled.paperLine >
+            <Styled.PaperLineContent>{lineTwoContent}</Styled.PaperLineContent>
+          </Styled.paperLine>
           <Styled.paperLine />
           <Styled.paperLine />
           <Styled.paperLine />

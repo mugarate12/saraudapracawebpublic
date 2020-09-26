@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, ChangeEvent } from 'react'
 
 import GlobalStyle from './../../styles/global'
 
@@ -15,15 +15,17 @@ export default function Home() {
   const [lineLenght, setLineLenght] = useState<number>(0)
   const [numberLine, setNumberLine] = useState<number>(1)
 
-  useEffect(() => {
-    if (participantName.length !== 0 && participantActivity.length === 0) {
-      setLineLenght(participantName.length)
-      setNumberLine(1)
-    } else if (participantActivity.length !== 0) {
-      setLineLenght(participantActivity.length)
-      setNumberLine(2)
-    }
-  }, [participantName, participantActivity])
+  function handleParticipantName(e: ChangeEvent<HTMLInputElement>) {
+    setNumberLine(1)
+    setParticipantName(e.target.value)
+    setLineLenght(participantName.length)
+  }
+
+  function handleParticipantActivity(e: ChangeEvent<HTMLInputElement>) {
+    setNumberLine(2)
+    setParticipantActivity(e.target.value)
+    setLineLenght(participantActivity.length)
+  }
 
   return (
     <>
@@ -34,10 +36,10 @@ export default function Home() {
       <h1>OLÁ</h1>
       <Apresentation />
 
-      <PaperAndPen linelenght={lineLenght} numberline={numberLine} />
+      <PaperAndPen linelenght={lineLenght} numberline={numberLine} lineOneContent={participantName} lineTwoContent={participantActivity} />
 
-      <Input value={participantName} onChange={(e) => setParticipantName(e.target.value)} placeholder='Seu nome' />
-      <Input value={participantActivity} onChange={(e) => setParticipantActivity(e.target.value)} placeholder='cantar, tocar, o que você faz?'/>
+      <Input value={participantName} onChange={(e) => handleParticipantName(e)} placeholder='Seu nome' />
+      <Input value={participantActivity} onChange={(e) => handleParticipantActivity(e)} placeholder='cantar, tocar, o que você faz?'/>
     </> 
   )
 }
