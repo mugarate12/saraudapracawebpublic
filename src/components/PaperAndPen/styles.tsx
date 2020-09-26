@@ -4,7 +4,7 @@ export const ContainerG = styled.div`
   position: relative;
   width: 100px;
   height: 100px;
-  padding-top: 50px;
+  padding-top: 60px;
 `
 
 export const Container = styled.div`
