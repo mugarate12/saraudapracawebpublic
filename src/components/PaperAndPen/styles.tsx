@@ -22,6 +22,8 @@ export const paperContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  overflow: hidden;
+
   background-color: #E8C374;
 `
 
