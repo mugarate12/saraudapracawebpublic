@@ -40,11 +40,13 @@ export const paperLine  = styled.div`
 // E mais 12px pra descer uma linha
 export const penContainer  = styled.div`
   position: absolute;
-  top: ${props => `-60`}px;
-  left: 40px;
+  /* top: ${props => `-60`}px;
+  left: 40px; */
+
+  transition: 0.3s;
 
   width: 20px;
-  transform: rotate(60deg);
+  /* transform: rotate(60deg); */
 `
 
 export const penCable = styled.div`

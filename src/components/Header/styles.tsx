@@ -8,5 +8,16 @@ export const Container = styled.header`
   top: 0;
   left: 0;
 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   background-color: #333;
+`
+
+export const LogoImg = styled.img`
+  height: 40px;
+  width: 80px;
+
+  margin-left: 15px;
 `

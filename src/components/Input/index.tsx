@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 
 import * as Styled from './styles'
 
 interface InputInterface {
   value?: string;
-  onChange: () => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
 } 
 
-const Input: React.FC<InputInterface> = ({ value, onChange }) => {
-  return <Styled.Input value={value} onChange={() => onChange()} />
+const Input: React.FC<InputInterface> = ({ value, onChange, placeholder }) => {
+  return <Styled.Input value={value} onChange={onChange} placeholder={placeholder}/>
 } 
 
 export default Input
