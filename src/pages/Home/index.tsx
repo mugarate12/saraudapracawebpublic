@@ -1,11 +1,14 @@
 import React, { useState, ChangeEvent } from 'react'
 
 import GlobalStyle from './../../styles/global'
+import * as Styled from './styles'
 
 import Header from './../../components/Header/index'
 import Apresentation from './../../containers/Apresentation/index'
 import Input from './../../components/Input/index'
 import PaperAndPen from './../../components/PaperAndPen/index'
+import Button from './../../components/Button/index'
+import Footer from './../../components/Footer/index'
 
 export default function Home() {
   const [participantName, setParticipantName] = useState<string>('')
@@ -33,13 +36,22 @@ export default function Home() {
 
       <Header />
       
-      <h1>OLÁ</h1>
       <Apresentation />
 
-      <PaperAndPen linelenght={lineLenght} numberline={numberLine} lineOneContent={participantName} lineTwoContent={participantActivity} />
+      <Styled.PaperAndPenContainer>
+        <PaperAndPen linelenght={lineLenght} numberline={numberLine} lineOneContent={participantName} lineTwoContent={participantActivity} />
+      </Styled.PaperAndPenContainer>
 
-      <Input value={participantName} onChange={(e) => handleParticipantName(e)} placeholder='Seu nome' />
-      <Input value={participantActivity} onChange={(e) => handleParticipantActivity(e)} placeholder='cantar, tocar, o que você faz?'/>
+      <Styled.FormContainer>
+        <Input value={participantName} onChange={(e) => handleParticipantName(e)} placeholder='Seu nome' />
+        <Input value={participantActivity} onChange={(e) => handleParticipantActivity(e)} placeholder='cantar, tocar, o que você faz?'/>
+      </Styled.FormContainer>
+      
+      <Styled.ButtonContainer>
+        <Button />
+      </Styled.ButtonContainer>
+
+      <Footer />
     </> 
   )
 }

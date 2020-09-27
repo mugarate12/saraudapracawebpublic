@@ -10,6 +10,6 @@ export default createGlobalStyle`
     background: #FAFAFA;
     font-size: 16px;
     color: #333;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 `

@@ -12,7 +12,7 @@ export const Container = styled.header`
   flex-direction: row;
   align-items: center;
 
-  background-color: #333;
+  background-color: transparent;
 `
 
 export const LogoImg = styled.img`
