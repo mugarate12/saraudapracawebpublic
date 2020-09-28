@@ -5,9 +5,10 @@ import * as Styled from './styles'
 
 import Header from './../../components/Header/index'
 import Apresentation from './../../containers/Apresentation/index'
-import Input from './../../components/Input/index'
+import About from './../../containers/About/index'
 import CommumText from './../../components/CommumText/index'
 import PaperAndPen from './../../components/PaperAndPen/index'
+import Input from './../../components/Input/index'
 import Button from './../../components/Button/index'
 import Footer from './../../components/Footer/index'
 
@@ -35,6 +36,8 @@ export default function Home() {
       <Header />
       
       <Apresentation />
+
+      <About />
 
       <Styled.PaperAndPenContainer>
         <CommumText>Preencha os campos com os dados pedidos e confira nessa ficha logo abaixo como está ficando. Vamos avaliar com todo carinho, ta?</CommumText>
