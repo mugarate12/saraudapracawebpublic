@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContainerG = styled.div`
   position: relative;
   width: 100px;
-  height: 100px;
+  height: 150px;
   padding-top: 60px;
 `
 
@@ -14,6 +14,7 @@ export const Container = styled.div`
 // desenhar o papel
 export const paperContainer = styled.div`
   width: 100px;
+  padding-top: 5px;
   padding-bottom: 10px;
 
   transform: rotate(-10deg);

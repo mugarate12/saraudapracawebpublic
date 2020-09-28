@@ -7,5 +7,5 @@ export const Title = styled.h1`
 
   margin-bottom: 20px;
 
-  color: #333;
+  color: #FFF;
 `

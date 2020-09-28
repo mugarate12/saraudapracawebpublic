@@ -11,7 +11,7 @@ interface PaperAndPenInterface {
 
 const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, lineOneContent, lineTwoContent }) => {
   function movePenInPaper() {
-    let top = -60
+    let top = -56
     let left = 38
     let topNextLine = 12
     let topIncrement = -1
@@ -72,6 +72,9 @@ const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, l
           <Styled.paperLine >
             <Styled.PaperLineContent>{lineTwoContent}</Styled.PaperLineContent>
           </Styled.paperLine>
+          <Styled.paperLine />
+          <Styled.paperLine />
+          <Styled.paperLine />
           <Styled.paperLine />
           <Styled.paperLine />
           <Styled.paperLine />

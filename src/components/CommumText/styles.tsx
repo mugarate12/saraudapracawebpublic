@@ -4,7 +4,9 @@ export const Text = styled.p`
   font-size: 14px;
   font-size: 0.875rem;
 
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
 
-  color: #FFF;
+  color: #333;
 `
