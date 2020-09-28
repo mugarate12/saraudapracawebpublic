@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const ContainerG = styled.div`
   position: relative;
-  width: 100px;
-  height: 150px;
+  width: 200px;
+  height: 160px;
   padding-top: 60px;
 `
 
@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 // desenhar o papel
 export const paperContainer = styled.div`
-  width: 100px;
+  width: 200px;
   padding-top: 5px;
   padding-bottom: 10px;
 
@@ -31,6 +31,9 @@ export const paperContainer = styled.div`
 export const paperLine = styled.div`
   height: 10px;
   width: 90%;
+  
+  margin-bottom: 2px;
+
   background-color: #E8C374;
 
   border-bottom-style: solid;

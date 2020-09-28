@@ -5,18 +5,17 @@ import * as Styled from './styles'
 interface PaperAndPenInterface {
   linelenght: number;
   numberline: number;
-  lineOneContent?: string;
-  lineTwoContent?: string;
+  linesStates: Array<string>;
 }
 
-const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, lineOneContent, lineTwoContent }) => {
+const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, linesStates }) => {
   function movePenInPaper() {
-    let top = -56
+    let top = -49
     let left = 38
-    let topNextLine = 11
+    let topNextLine = 13
     let topIncrement = -1
     let leftIncrement = 6
-    let lineLimit = 14
+    let lineLimit = 29
     let rotationPen
     
     // mudar a regra de como muda a caneta de linha
@@ -34,7 +33,7 @@ const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, l
 
       top = top + topAlteration
       left = left + leftAlteration
-    } else if (numberline === 2) {
+    } else if (numberline !== 1) {
       let topAlteration
       let leftAlteration
 
@@ -46,7 +45,9 @@ const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, l
         leftAlteration = linelenght * leftIncrement
       }
 
-      top = top + topNextLine + topAlteration
+      let nextLine = topNextLine * (numberline - 1)
+
+      top = top + nextLine + topAlteration
       left = left + leftAlteration
     }
 
@@ -63,28 +64,26 @@ const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, l
     }
   }
 
-  // 14 letras por linha
   function renderLinesInPaper() {
-    // preciso pegar um estado, verificar seu tamanho e se passar de .length == 14 dividir esse conteudo
-    // será dividido em 14 letras por linha
-    // no máximo duas linhas por estado
+    // Vou renderizar 8 linhas portanto, depois de receber os 5 estados, completo com outras linhas vazias.
+    // Caso não receba 5 estados, vou completar com o máximo de linhas possivel
+    let EmptyLines: Array<number> = []
+    EmptyLines.length = 8 - linesStates?.length
+    EmptyLines.fill(0)
 
     return (
       <>
-        <Styled.paperLine >
-          <Styled.PaperLineContent>{lineOneContent}</Styled.PaperLineContent>
-        </Styled.paperLine>
-        
-        <Styled.paperLine >
-          <Styled.PaperLineContent>{lineTwoContent}</Styled.PaperLineContent>
-        </Styled.paperLine>
+        {linesStates.map((lineContent, index) => {
+          return (
+            <Styled.paperLine key={index}>
+              <Styled.PaperLineContent>{lineContent}</Styled.PaperLineContent>
+            </Styled.paperLine>
+          )
+        })}
 
-        <Styled.paperLine />
-        <Styled.paperLine />
-        <Styled.paperLine />
-        <Styled.paperLine />
-        <Styled.paperLine />
-        <Styled.paperLine />
+        {EmptyLines.map((number, index) => {
+          return <Styled.paperLine key={index}/>
+        })}
       </>
     )
   }

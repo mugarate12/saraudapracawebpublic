@@ -14,21 +14,18 @@ import Footer from './../../components/Footer/index'
 export default function Home() {
   const [participantName, setParticipantName] = useState<string>('')
   const [participantActivity, setParticipantActivity] = useState<string>('')
+  const [participantEmail, setParticipantEmail] = useState<string>('')
+  const [participantPhone, setParticipantPhone] = useState<string>('')
+  const [participantInstagram, setParticipantInstagram] = useState<string>('')
 
   // estados pra manipulação da "animação" do papel e caneta
   const [lineLenght, setLineLenght] = useState<number>(0)
   const [numberLine, setNumberLine] = useState<number>(1)
 
-  function handleParticipantName(e: ChangeEvent<HTMLInputElement>) {
-    setNumberLine(1)
-    setParticipantName(e.target.value)
-    setLineLenght(participantName.length)
-  }
-
-  function handleParticipantActivity(e: ChangeEvent<HTMLInputElement>) {
-    setNumberLine(2)
-    setParticipantActivity(e.target.value)
-    setLineLenght(participantActivity.length)
+  function handleParticipantContent(e: ChangeEvent<HTMLInputElement>, state: string, setState: React.Dispatch<React.SetStateAction<string>>, numberLine: number) {
+    setNumberLine(numberLine)
+    setState(e.target.value)
+    setLineLenght(state.length)
   }
 
   return (
@@ -41,12 +38,15 @@ export default function Home() {
 
       <Styled.PaperAndPenContainer>
         <CommumText>Preencha os campos com os dados pedidos e confira nessa ficha logo abaixo como está ficando. Vamos avaliar com todo carinho, ta?</CommumText>
-        <PaperAndPen linelenght={lineLenght} numberline={numberLine} lineOneContent={participantName} lineTwoContent={participantActivity} />
+        <PaperAndPen linelenght={lineLenght} numberline={numberLine} linesStates={[participantName, participantActivity, participantEmail, participantPhone, participantInstagram]} />
       </Styled.PaperAndPenContainer>
 
       <Styled.FormContainer>
-        <Input value={participantName} onChange={(e) => handleParticipantName(e)} placeholder='Seu nome' />
-        <Input value={participantActivity} onChange={(e) => handleParticipantActivity(e)} placeholder='cantar, tocar, o que você faz?'/>
+        <Input value={participantName} onChange={(e) => handleParticipantContent(e, participantName, setParticipantName, 1)} placeholder='Qual seu nome?' />
+        <Input value={participantActivity} onChange={(e) => handleParticipantContent(e, participantActivity, setParticipantActivity, 2)} placeholder='cantar, tocar, o que você quer apresentar?'/>
+        <Input value={participantEmail} onChange={(e) => handleParticipantContent(e, participantEmail, setParticipantEmail, 3)} placeholder='Qual seu email?'/>
+        <Input value={participantPhone} onChange={(e) => handleParticipantContent(e, participantPhone, setParticipantPhone, 4)} placeholder='Me passa teu whatsapp?'/>
+        <Input value={participantInstagram} onChange={(e) => handleParticipantContent(e, participantInstagram, setParticipantInstagram, 5)} placeholder='E teu @ no instagram, conta pra mim?'/>
       </Styled.FormContainer>
       
       <Styled.ButtonContainer>
