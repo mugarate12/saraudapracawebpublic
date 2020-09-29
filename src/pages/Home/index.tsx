@@ -6,6 +6,7 @@ import * as Styled from './styles'
 import Header from './../../components/Header/index'
 import Apresentation from './../../containers/Apresentation/index'
 import About from './../../containers/About/index'
+import Contact from './../../containers/Contact/index'
 import CommumText from './../../components/CommumText/index'
 import PaperAndPen from './../../components/PaperAndPen/index'
 import Input from './../../components/Input/index'
@@ -38,6 +39,8 @@ export default function Home() {
       <Apresentation />
 
       <About />
+
+      <Contact />
 
       <Styled.PaperAndPenContainer>
         <CommumText>Preencha os campos com os dados pedidos e confira nessa ficha logo abaixo como está ficando. Vamos avaliar com todo carinho, ta?</CommumText>
