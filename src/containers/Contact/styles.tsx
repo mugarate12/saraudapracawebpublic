@@ -46,6 +46,13 @@ export const InstagramIcon = styled(FaInstagram)`
   font-size: 36px;
 
   color: #FFF;
+
+  cursor: pointer;
+
+  :hover {
+    opacity: 0.8;
+    transition: 0.8s;
+  }
 `
 
 export const EmailIcon = styled(FaEnvelope)`
@@ -54,4 +61,11 @@ export const EmailIcon = styled(FaEnvelope)`
   margin-left: 15px;
 
   color: #FFF;
+
+  cursor: pointer;
+
+  :hover {
+    opacity: 0.8;
+    transition: 0.8s;
+  }
 `

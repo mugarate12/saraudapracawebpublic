@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { FaArrowRight } from 'react-icons/fa'
 
 export const Button = styled.button`
-  height: 30px;
-  width: 60px;
+  height: 50px;
+  width: 100px;
 
   display: flex;
   justify-content: center;
@@ -14,11 +14,16 @@ export const Button = styled.button`
   background-color: #333;
 
   border: 0 none;
-  border-radius: 15%;
+  border-radius: 10%;
+
+  :hover {
+    opacity: 0.7;
+    transition: 0.8s;
+  }
 `
 
 export const ArrowIcon = styled(FaArrowRight)`
-  font-size: 12px;
+  font-size: 20px;
 
   color: #FFF;
 `

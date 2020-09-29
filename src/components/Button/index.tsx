@@ -2,10 +2,16 @@ import React from 'react'
 
 import * as Styled from './styles'
 
-export default function Button() {
+interface ButtonInterface {
+  onClick?: () => void;
+}
+
+const Button: React.FC<ButtonInterface> = ({ onClick }) => {
   return (
-    <Styled.Button>
+    <Styled.Button onClick={() => !!onClick ? onClick() : {}}>
       <Styled.ArrowIcon />
     </Styled.Button>
   )
 }
+
+export default Button

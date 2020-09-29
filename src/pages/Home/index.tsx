@@ -30,6 +30,10 @@ export default function Home() {
     setLineLenght(state.length)
   }
 
+  function handleButton() {
+    alert('verifique seu email, e boa sorte! <3')
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -56,7 +60,7 @@ export default function Home() {
       </Styled.FormContainer>
       
       <Styled.ButtonContainer>
-        <Button />
+        <Button onClick={handleButton} />
       </Styled.ButtonContainer>
 
       <Footer />

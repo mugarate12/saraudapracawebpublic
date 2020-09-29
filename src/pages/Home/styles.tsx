@@ -11,6 +11,8 @@ export const PaperAndPenContainer = styled.div`
 export const FormContainer = styled.form`
   width: 100%;
 
+  margin-bottom: 15px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
