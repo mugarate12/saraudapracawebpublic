@@ -42,7 +42,8 @@ export const paperLine = styled.div`
 `
 
 export const PaperLineContent = styled.p`
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: bold;
 `
 
 //desenhar a caneta
