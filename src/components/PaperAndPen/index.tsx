@@ -14,8 +14,8 @@ const PaperAndPen: React.FC<PaperAndPenInterface> = ({ linelenght, numberline, l
     let left = 38
     let topNextLine = 13
     let topIncrement = -1
-    let leftIncrement = 6
-    let lineLimit = 29
+    let leftIncrement = 7
+    let lineLimit = 28
     let rotationPen
     
     // mudar a regra de como muda a caneta de linha
