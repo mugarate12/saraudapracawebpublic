@@ -11,7 +11,7 @@ export default function Contact() {
 
       <Styled.IconsContainer>
           <Styled.InstagramIcon onClick={() => window.open('https://www.instagram.com/saraudapraca/')} />
-          <Styled.EmailIcon onClick={() => window.open('mailto:saraudapraca@gmail.com')} />
+          <Styled.EmailIcon onClick={() => window.open('mailto:saraudapraca.poesia@gmail.com')} />
       </Styled.IconsContainer>
     </Styled.Container>
   )
