@@ -13,6 +13,8 @@ import Input from './../../components/Input/index'
 import Button from './../../components/Button/index'
 import Footer from './../../components/Footer/index'
 
+import api from './../../config/axios'
+
 export default function Home() {
   const [participantName, setParticipantName] = useState<string>('')
   const [participantActivity, setParticipantActivity] = useState<string>('')
@@ -30,8 +32,27 @@ export default function Home() {
     setLineLenght(state.length)
   }
 
-  function handleButton() {
-    alert('verifique seu email, e boa sorte! <3')
+  async function handleButton() {
+    const filledFields = !!participantName && !!participantActivity && !!participantEmail && !!participantPhone && !!participantInstagram
+
+    if (filledFields) {
+      await api.post('/participants', {
+        name: participantName,
+        activity: participantActivity,
+        email: participantEmail,
+        num_phone: participantPhone,
+        instagram: participantInstagram
+      })
+        .then(response => {
+          alert('verifique seu email, e boa sorte! <3')
+        })
+        .catch(error => {
+          alert('Não há eventos disponiveis pra cadastrar, por favor, entre em contato conosco e nos acompanhe pra saber quando haverá um novo evento. <3')
+        })
+
+    } else {
+      alert('preencha todos os campos!')
+    }
   }
 
   return (
